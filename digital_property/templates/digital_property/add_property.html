@@ -1,0 +1,75 @@
+{% extends 'digital_property/dashboard_base.html'%}
+{% block title %}Add-Property{% endblock %}
+{% block content %}
+  <div class="container_add_property_page">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row_one">
+            <h1>Add new property</h1>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row_two">
+            <a href="{% url 'add_property_appartment' %}">Residential(Apartment)</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row_two">
+            <a href="">Residential(Villa)</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row_two">
+            <a href="{% url 'add_property_house' %}">Residential(House)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row_three">
+            <a href="">Commercial</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row_three">
+            <a href="">Multiple-unity</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row_three">
+            <a href="{% url 'add_property_land' %}">Land(plot)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row_four">
+            <a href="">Short-term</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <!-- <div class="row_four">
+            <a href="">Multiple-unity</a>
+          </div> -->
+        </div>
+        <div class="col-md-4">
+          <!-- <div class="row_four">
+            <a href="">Land(plot)</a>
+          </div> -->
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+{% endblock %}

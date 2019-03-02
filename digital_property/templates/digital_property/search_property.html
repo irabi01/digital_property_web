@@ -1,0 +1,116 @@
+<form method="GET" action="">
+  <!-- {% csrf_token %} -->
+  <div class="search_container">
+    <div class="container">
+      <div class="row no-gutters row_one">
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="region">
+              <option value="{{request.GET.region}}">Select Location</option>
+              <option value="Arusha">Arusha</option>
+              <option value="Dar es salaam">Dar es salaam</option>
+              <option value="Dodoma">Dodoma</option>
+              <option value="Iringa">Iringa</option>
+              <option value="Mbeya">Mbeya</option>
+              <option value="Kagera">Kagera</option>
+              <option value="Kigoma">Kigoma</option>
+              <option value="Mara">Mara</option>
+              <option value="Pwani">Pwani</option>
+              <option value="Morogoro">Morogoro</option>
+              <option value="Tabora">Tabora</option>
+              <option value="Mwanza">Mwanza</option>
+              <option value="Kilimanjaro">Kilimanjaro</option>
+              <option value="Songea">Songea</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="property_sell_or_rent">
+              <option value="{{request.GET.property_sell_or_rent}}">Select Type</option>
+              <option value="Rent">Rent</option>
+              <option value="Sell">Sell</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="property_type">
+              <option value="{{request.GET.property_type}}">Select Property Type</option>
+              <option value="Land">Land</option>
+              <option value="Residential-Villa">Residential-Villa</option>
+              <option value="Residential-Home">Residential-Home</option>
+              <option value="Residential-Apartment">Residential-Apartment</option>
+              <option value="Short-Term">Short-Term</option>
+              <option value="Godown">Godown</option>
+              <option value="Office">Office</option>
+              <option value="Shop">Shop</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="bedrooms_number">
+              <option value="{{request.GET.bedrooms_number}}">Number of bedroom(s)</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row no-gutters row_two">
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="condition">
+              <option value="{{request.GET.condition}}">Select Condition</option>
+              <option value="New">New</option>
+              <option value="Good-condition">Good-condition</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <select class="form-control custom-select" name="price">
+              <option value="{{request.GET.price}}">Select Price</option>
+              <option value="Low-First">Low-First</option>
+              <option value="High-first">High-first</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <!-- <input type="date" name="" value="" class="form-control"> -->
+            <select class="form-control custom-select" name="month_uploaded">
+              <option value="{{request.GET.month_uploaded}}">Select Month</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <button type="submit" name="search" class="btn btn-block">seacrh</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</form>

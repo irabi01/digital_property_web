@@ -1,0 +1,106 @@
+{% extends 'digital_property/base.html'%}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="all_content">
+  <div class="container-home-one">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Find your dream Property</h1>
+          {% include 'digital_property/search_property.html'%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="search_container_second">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8  offset-md-2">
+          <div class="form-group">
+            <form action="" method="GET">
+                <input type="text" name="q" value="" placeholder="search your keywords" class="w3-input">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="property_content_home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="container">
+            <div class="row">
+              {% for house in house_data %}
+                <div class="col-md-6">
+                  <div class="card">
+                   <img src="/static/images/img4.jpg" alt="company image" class="img-fluid">
+                   <div class="card-body">
+                     <p class="card-text">{{house.Title}} - {{house.Type}}</p>
+                     <p class="card-text">Location: {{house.Location}}</p>
+                     <h5 class="card-title">Price: Tshs. {{house.Price}}/=</h5>
+                     <hr>
+                     <!-- <p class="card-text">{{house.Description}}</p> -->
+                     <a href="#" class="btn btn-primary">More</a>
+                   </div>
+                   </div>
+                </div>
+              {% endfor %}
+
+              {% for land in land_data %}
+                    <div class="col-md-6">
+                      <div class="card">
+                       <img src="/static/images/img9.jpg" alt="company image" class="img-fluid">
+                       <div class="card-body">
+                         <p class="card-text">{{land.Title}}</p>
+                         <p class="card-text">Area in sq.meter: {{land.Area}}</p>
+                         <p class="card-text">Location: {{land.Location}}</p>
+                         <h5 class="card-title">Price: Tshs. {{land.Price}}/=</h5>
+                         <hr>
+                         <!-- <p class="card-text">{{house.Description}}</p> -->
+                         <a href="#" class="btn btn-primary">More</a>
+                       </div>
+                       </div>
+                    </div>
+                {% endfor%}
+                  <!-- <div class="left_colum_view_property"></div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          {% for house in house_data %}
+          <div class="card">
+           <!-- <i class="fa fa-download"></i> -->
+           <img src="/static/images/img2.jpg" alt="company image" class="img-fluid">
+           <div class="card-body">
+             <p class="card-text">Location: {{house.Location}}</p>
+             <h5 class="card-title">Price: Tshs. {{house.Price}}/=</h5>
+             <hr>
+             <!-- <p class="card-text">{{house.Description}}</p> -->
+             <a href="#" class="btn btn-primary">More</a>
+           </div>
+         </div>
+         {% endfor%}
+         {% for land in land_data %}
+         <div class="card">
+          <!-- <i class="fa fa-download"></i> -->
+          <img src="/static/images/img9.jpg" alt="company image" class="img-fluid">
+          <div class="card-body">
+            <p class="card-text">Location: {{land.Location}}</p>
+            <h5 class="card-title">Price: Tshs. {{land.Price}}/=</h5>
+            <hr>
+            <!-- <p class="card-text">{{house.Description}}</p> -->
+            <a href="#" class="btn btn-primary">More</a>
+          </div>
+        </div>
+        {% endfor%}
+          <!-- <div class="right_column_view_property"></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

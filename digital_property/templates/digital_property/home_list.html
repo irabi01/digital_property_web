@@ -1,0 +1,40 @@
+{% extends 'digital_property/base.html'%}
+{% block title %}Category-House-Villa{% endblock %}
+{% block content%}
+  <div class="container_residential_house">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Residential House</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="second_container_residential_house">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="container">
+            <div class="row">
+              {% for residential_house in residential_house_data %}
+              <div class="col-md-6">
+                <div class="card all_residential_house">
+                 <img src="/static/images/img4.jpg" alt="company image" class="img-fluid">
+                 <div class="card-body">
+                   <p class="card-text">{{residential_house.Title}} - {{residential_house.Type}}</p>
+                   <p class="card-text">Location: {{residential_house.Location}}</p>
+                   <h5 class="card-title">Price: Tshs. {{residential_house.Price}}/=</h5>
+                   <hr>
+                   <!-- <p class="card-text">{{house.Description}}</p> -->
+                   <a href="#" class="btn btn-primary">More</a>
+                 </div>
+                 </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}

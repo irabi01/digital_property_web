@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digital Property | Dashboard - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/w3file.css' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/css.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/font-awesome.min.css' %}">
+</head>
+<body>
+
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-card-4 side_navigation_dashboard" style="width:250px;" id="mySidebar">
+    <button class="w3-bar-item w3-button w3-hide-large"
+    onclick="w3_close()">Close &times;</button>
+    <center><img src="/static/images/jijiskape.jpg" alt="company image" class="img-fluid" width="50%"></center>
+    <a href="{% url 'dashboard_home' %}" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+    <a href="{% url 'add_property' %}" class="w3-bar-item w3-button"><i class="fa fa-university"></i> Add Property</a>
+    <a href="{% url 'property_list' %}" class="w3-bar-item w3-button"><i class="fa fa-plus"></i> List of Property</a>
+    <!-- <a href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> logout</a> -->
+  </div>
+  <div class="w3-main" style="margin-left:250px">
+    <div class="dashboard_header">
+      <button class="w3-button w3-teal w3-hide-large" onclick="w3_open()">&#9776;</button>
+      <div class="w3-container">
+        <div class="welcome_header">
+          {% if request.user.is_authenticated %}
+             <h1>Welcome: {{request.user.username}}</h1>
+          {% endif %}
+        </div>
+        <div class="logout">
+          <form action="{% url 'logout' %}" method = "POST">
+            {% csrf_token %}
+            <button type="submit" name="button" class="btn btn-sm btn-primary">logout</button>
+          </form>
+          <!-- <p><a href="{% url 'logout' %}" class="w3-bar-item w3-button">logout <i class="fa fa-sign-out"></i></a></p> -->
+        </div>
+      </div>
+    </div>
+    <div class="w3-container">
+      {% block content %}{% endblock %}
+      {% include "digital_property/footer.html" %}
+    </div>
+  </div>
+  <script>
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+  </script>
+
+  <script type="text/javascript" src="{% static 'customer/js/jqueryfile.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/jqueryui/jquery-ui.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/customjs.js' %}"></script>
+  <script>
+  autocomplete(document.getElementById("myInput"), countries);
+  </script>
+  <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/jqueryfile.js' %}"></script>
+  <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

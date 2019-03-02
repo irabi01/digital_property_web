@@ -1,0 +1,25 @@
+{% extends 'digital_property/base.html'%}
+{% block title %}Login{% endblock %}
+{% block content%}
+  <div class="container-login-one">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="login_form w3-card-4">
+            <center><img src="/static/images/jijiskape.jpg" alt="company image" class="img-fluid" width="50%"></center>
+            <form action="{% url 'login_page' %}" method="post">
+              {% csrf_token %}
+              {{form}}
+              <br><br>
+              <div class="form-group">
+                <button type="submit" name="button" class="btn btn-block btn-sm">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </div>
+{% endblock%}

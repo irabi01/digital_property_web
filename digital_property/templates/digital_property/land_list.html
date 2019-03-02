@@ -1,0 +1,41 @@
+{% extends 'digital_property/base.html'%}
+{% block title %}Category-Land{% endblock %}
+{% block content%}
+  <div class="container_land_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Land</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="second_container_land">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="container">
+            <div class="row">
+              {% for land in lands %}
+              <div class="col-md-6">
+                      <div class="card all_land">
+                       <img src="/static/images/img9.jpg" alt="company image" class="img-fluid">
+                       <div class="card-body">
+                         <p class="card-text">{{land.Title}}</p>
+                         <p class="card-text">Area in sq.meter: {{land.Area}}</p>
+                         <p class="card-text">Location: {{land.Location}}</p>
+                         <h5 class="card-title">Price: Tshs. {{land.Price}}/=</h5>
+                         <hr>
+                         <!-- <p class="card-text">{{house.Description}}</p> -->
+                         <a href="#" class="btn btn-primary">More</a>
+                       </div>
+                       </div>
+                    </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}

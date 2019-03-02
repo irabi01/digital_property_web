@@ -1,0 +1,106 @@
+{% extends 'digital_property/dashboard_base.html'%}
+{% block title %}Add-House{% endblock %}
+{% block content %}
+  <div class="container_dashboard_house">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Add House property</h1>
+          <hr>
+          {% if messages %}
+            {% for message in messages %}
+            <div class="w3-panel w3-display-container w3-green">
+             <span onclick="this.parentElement.style.display='none'"
+             class="w3-button w3-display-topright">X</span>
+              <h1 {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</h1>
+            </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="house_second_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+          <div class="land_form">
+            <form method="post" action="{% url 'add_property_house' %}">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Property Title</label>
+                    {{form.Title}}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Location</label>
+                    {{form.Location}}
+                  </div>
+                </div>
+              </div>
+              <!-- second row -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Type</label>
+                    {{form.Type}}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Number of Bebrooms</label>
+                    {{form.Number_of_bedrooms}}
+                  </div>
+                </div>
+              </div>
+              <!-- third row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="">Property Description</label>
+                    {{form.Description}}
+                  </div>
+                </div>
+              </div>
+              <!-- fourth row -->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Property Image</label>
+                    {{form.Image}}
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Property Price(Tshs.)</label>
+                    {{form.Price}}
+                  </div>
+                </div>
+              </div>
+              <!-- fourth row -->
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <button type="submit" name="button" class="btn btn-block btn-sm">add property</button>
+                  </div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
